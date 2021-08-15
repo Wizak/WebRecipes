@@ -1,0 +1,7 @@
+requirements.txt
+Procfile.txt
+app.db
+/migrations
+/__pycache__
+/app/__pycache__
+test.py

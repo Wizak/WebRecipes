@@ -1,0 +1,75 @@
+.showhead {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.titlehead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.recipe-img {
+    position: relative;
+    width: 50%;
+}
+
+.recipe-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.recipe-head-descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.recipe-body-descr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 50px 50px 0 50px;
+    overflow-x: hidden;
+}
+
+.recipe-header h3 {
+    margin-bottom: 20px;
+}
+
+.recipe-body-descr #descr {
+    width: 50%;
+}
+
+.recipe-body-descr #comp {
+    width: 30%;
+}
+
+.recipe-body-descr p {
+    text-align: justify;
+}
+
+#like {
+    position: relative;
+    left: 40%;
+    width: 20%;
+    border-radius: 20px;
+}
+
+#send-like {
+    width: 0%;
+    opacity: 0;
+}

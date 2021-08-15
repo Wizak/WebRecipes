@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block link %}
+<link href="{{ url_for('static', filename='home.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+  Home
+{% endblock %}
+{% block content %}
+<div class="carouselka">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-img">
+          <img src="{{ url_for('carousel_photo', title=slides[0]['category']) }}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="header-caption">
+            <h3><a href="{{ url_for('show_category', title=slides[0]['category']) }}">{{ slides[0]['category'] }}</a></h3>
+            <p>{{ slides[0]['description'] }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-img">
+          <img src="{{ url_for('carousel_photo', title=slides[1]['category']) }}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="header-caption">
+            <h3><a href="{{ url_for('show_category', title=slides[1]['category']) }}">{{ slides[1]['category'] }}</a></h3>
+            <p>{{ slides[1]['description'] }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-img">
+          <img src="{{ url_for('carousel_photo', title=slides[2]['category']) }}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="header-caption">
+            <h3><a href="{{ url_for('show_category', title=slides[2]['category']) }}">{{ slides[2]['category'] }}</a></h3>
+            <p>{{ slides[2]['description'] }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="jumbotron">
+    <h1 class="display-4">The Most Liked Category</h1>
+    <p class="lead">This is catagorys of recipes that was liked other preople. You can explore every category for your taste.</p>
+    <hr class="my-4">
+    <p>Let`s do this. Click on the button and explore more categorys.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{{ url_for('show') }}" role="button">Learn more</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

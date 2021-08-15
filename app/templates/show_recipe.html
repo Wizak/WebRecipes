@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block link %}
+<link href="{{ url_for('static', filename='show_recipe.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+    Recipe
+{% endblock %}
+{% block content %}
+<div class="showhead">
+    <div class="titlehead">
+        <h1 class="card-title">Description about recipe</h1>
+        <p class="lead">Take a look at the recipe, maybe it will suit you</p>
+    </div>
+    <div class="recipe">
+        <div class="recipe-head">
+            <div class="recipe-img">
+                <img src="{{ url_for('recipe_photo', title=recipe['title']) }}" class="img-thumbnail">
+            </div>
+            <div class="recipe-head-descr">
+                <div class="recipe-header">
+                    <h3 class="card-title">Title</h3>
+                    <p class="lead">{{ recipe['title'] }}</p>
+                </div>
+                <div class="recipe-header">
+                    <h3 class="card-title">Likes</h3>
+                    <p class="lead">{{ recipe['likes'] }}</p>
+                </div>
+                <div class="recipe-header">
+                    <h3 class="card-title">Date</h3>
+                    <p class="lead">{{ recipe['time'] }}</p>
+                </div>  
+            </div>
+        </div>
+        <div class="recipe-body-descr">
+            <div id="descr" class="recipe-header">
+                <h3 class="card-title">Description</h3>
+                <p class="lead" style="text-indent: 50px;">{{ recipe['description'] }}</p>
+            </div>
+            <div id="comp" class="recipe-header">
+                <h3 class="card-title">Components</h3>
+                <ul>
+                    {% for component in recipe['components'] %}
+                    <li><p class="lead">{{ component }}</p></li>
+                    {% endfor%}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% if session.get('authed_in') == 'True' %}
+    <form method="POST">
+        <input type="text" value="{{ recipe['title'] }}" name='title' id='send-like'>
+        {% if truth == 'like' %}
+            <input type="submit" class="btn btn-primary btn-lg" id="like" value="LIKE">
+        {% else %}
+            <input type="submit" class="btn btn-primary btn-lg" id="like" value="DISLIKE">
+        {% endif%}
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

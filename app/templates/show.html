@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block link %}
+<link href="{{ url_for('static', filename='show.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+    Show
+{% endblock %}
+{% block content %}
+<div class="showhead">
+    <div class="titlehead">
+        <h1 class="card-title">Categorys of recipes</h1>
+        <p class="lead">Click on the best liked category and explore more about recipes into.</p>
+    </div>
+    <div class="cards">
+        {% for card in cards %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ url_for('category_photo', title=card['title']) }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ card['title'] }}</h5>
+                <p class="card-text">{{ card['subtitle'] }}</p>
+                <a href="{{ url_for('show_category', title=card['title']) }}" class="btn btn-primary">View</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

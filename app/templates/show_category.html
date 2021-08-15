@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% block link %}
+<link href="{{ url_for('static', filename='show_category.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+    Category
+{% endblock %}
+{% block content %}
+<div class="showhead">
+    <div class="titlehead">
+        <h1 class="card-title">Category of recipes</h1>
+        <p class="lead">Click on the best liked category and explore more about recipes into.</p>
+    </div>
+    <div class="titleheads">
+        {% for title in recipes %}
+        <h3 class="card-title"><a href="{{ url_for('show_recipe', title=title) }}">{{ title }}</a></h3>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

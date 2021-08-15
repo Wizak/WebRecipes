@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='account.css') }}" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="sidenav">
+        <img class="login-img" src="{{ url_for('static', filename='images/Pizza_home.jpg') }}">
+        <div class="login-main-text">
+            <h1><a href="{{ url_for('home') }}">My Recipes</a></h1><br><h3>{% block text %}{% endblock %}</h3>
+            <p>Login or register from here to access.</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

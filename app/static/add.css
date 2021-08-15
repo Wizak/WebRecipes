@@ -1,0 +1,45 @@
+.showhead {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.titlehead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.studio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.row div {
+    margin: 20px;
+}
+
+#part-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#part-two div {
+    margin: 20px 0px;
+}
+
+#upload {
+    height: 60px;
+    width: 100%;
+}

@@ -1,0 +1,20 @@
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.showhead {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.titlehead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}

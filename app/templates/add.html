@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block link %}
+<link href="{{ url_for('static', filename='add.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+    Add
+{% endblock %}
+{% block content %}
+<div class="showhead">
+    <div class="titlehead">
+        <h1 class="card-title">Description about recipe</h1>
+        <p class="lead">Take a look at the recipe, maybe it will suit you</p>
+    </div>
+    <div class="studio">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title recipe" name="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Components</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What the components in recipe" name="components"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description about recipe" name="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="col" id="part-two">
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="inputGroupFile02" name="photo" accept="image/*,image/jpg">
+                        </div>
+                        <div>
+                            <select class="form-select" aria-label="Default select example" name="category">
+                                <option selected>Choose Category</option>
+                                {% for category in categorys %}
+                                <option value="{{category}}">{{category}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div>
+                            <input class="btn btn-primary" type="submit" value="Submit" id="upload">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
