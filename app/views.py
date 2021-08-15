@@ -260,6 +260,18 @@ def add():
     return render_template('add.html', categorys=categorys)
 
 
+@app.route('/edit', methods=['GET', 'POST'])
+def edit():
+    if request.method == 'POST':
+        try:
+            search = request.form['search']
+            titles = search_query(search)
+            return render_template('search.html', titles=titles)
+        except KeyError:
+            pass
+    return render_template('edit.html')
+
+    
 @app.route('/show_recipe/<title>')
 def recipe_photo(title):
     query_recipe = Recipe.query.filter_by(title=title).one()
