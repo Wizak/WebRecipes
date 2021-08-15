@@ -34,18 +34,6 @@ def add_user(*args):
     else:
         return True
 
-
-@app.route('/edit', methods=['GET', 'POST'])
-def edit():
-    if request.method == 'POST':
-        try:
-            search = request.form['search']
-            titles = search_query(search)
-            return render_template('search.html', titles=titles)
-        except KeyError:
-            pass
-    return render_template('edit.html')
-
     
 def add_recipe(*args):
     query_recipe = check_recipe(args[0])
