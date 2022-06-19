@@ -1,5 +1,6 @@
 # Flask-WebRecipes
 
-> ###### Install all from requirements.txt.
-> ###### Clone repository and configure the sqlite db.
+> ###### Clone repository
+> ###### Install all from requirements.txt
+> ###### Configure the sqlite db.
 
